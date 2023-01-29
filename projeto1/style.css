@@ -25,7 +25,7 @@ html, body {
 }
 
 .container-extrato {
-   width: 50%;
+   width: 60%;
 }
 
 .body-login{
@@ -53,6 +53,10 @@ html, body {
    -moz-transition: 1s all ease-in-out;
  }
  
+ td{
+  white-space: nowrap;
+ }
+
  table td:nth-child(1) {
    width: 34px;
  }
@@ -69,3 +73,4 @@ html, body {
  .help {
    text-align: center;
  }
+

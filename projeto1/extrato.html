@@ -16,6 +16,7 @@
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
       crossorigin="anonymous"
     ></script>
+    <script src="script.js"></script>
 
     <link rel="stylesheet" href="style.css" />
 
@@ -58,7 +59,7 @@
 
     <div class="container text-center">
       <div class="row alinhar-horizontal">
-        <div class="container container-extrato">
+        <div class="container container-extrato" id="tabelaExtrato">
           <h3>Extrato Diário</h3>
 
           <table class="table table-striped table-dark">
@@ -70,37 +71,56 @@
                 <th scope="col">Valor</th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <th scope="row">12/11/2022</th>
-                <td>Crédito</td>
-                <td>Barbearia Julios</td>
-                <td>16,90</td>
-              </tr>
-              <tr>
-                <th scope="row">13/11/2022</th>
-                <td>Crédito</td>
-                <td>Adega Cetro</td>
-                <td>R$ 23,90</td>
-              </tr>
-              <tr>
-                <th scope="row">22/11/2022</th>
-                <td>Débio</td>
-                <td>Supermercado Preço Baixo</td>
-                <td>R$ 392,27</td>
-              </tr>
-              <tr>
-                <th scope="row">01/12/2022</th>
-                <td>Crédito</td>
-                <td>Padaria da vó</td>
-                <td>5,98</td>
-              </tr>
+            <tbody id="tabela">
             </tbody>
           </table>
+          <button type="button" onclick="inverterExtrato('listaExtrato', 'tabelaExtrato')"  class="btn btn-success">Adicionar Gastos</button>
+
+        </div>
+        <div class="container container-extrato" id="listaExtrato">
+          <form>
+            <div class="mb-3">
+              <h3 for="data" class="form-label">Data</h3>
+              <input
+                class="form-control"
+                id="data"
+                type="date"
+              />
+            </div>
+            <div class="mb-3">
+              <h3 for="tipoOp" class="form-label">Tipo de operação</h3>
+              <input
+                class="form-control"
+                id="tipoOp"
+                type="text"
+              />
+            </div>
+            <div class="mb-3">
+              <h3 for="estab" class="form-label">Estabelecimento</h3>
+              <input
+                class="form-control"
+                id="estab"
+                type="text"
+              />
+            </div>
+            <div class="mb-3">
+              <h3 for="valor" class="form-label">Valor</h3>
+              <input
+                class="form-control"
+                id="valor"
+                type="text"
+              />
+            </div>
+          </form>
+
+          
+          <button type="button" onclick="adicionarExtrato()"  class="btn btn-success">Finalizar</button>
+
         </div>
       </div>
     </div>
-    
-    <script src="script.js"></script>
   </body>
 </html>
+<script>
+  carregarTabela()
+</script>
